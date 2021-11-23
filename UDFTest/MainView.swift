@@ -6,16 +6,19 @@
 //
 
 import SwiftUI
-import SignInUI
 
 struct MainView: View {
-    @State var isAuthorized: Bool = false
+    @State var isAuthorized: Bool = true
 
     var body: some View {
         if isAuthorized {
             MainTabView()
         } else {
-            SignInView(viewModel: .init())
+            SignInView(store: .init(
+                initialState: .init(),
+                reducer: .signIn,
+                environment: .live
+            ))
         }
     }
 }
@@ -23,7 +26,14 @@ struct MainView: View {
 struct MainTabView: View {
     var body: some View {
         TabView {
-            EventsView().tabItem {
+            NavigationView {
+                EventsView(store: .init(
+                    initialState: .init(),
+                    reducer: .events,
+                    environment: ()
+                ))
+            }
+            .tabItem {
                 Text("Events")
                 Image(systemName: "trash")
             }
@@ -32,12 +42,6 @@ struct MainTabView: View {
                 Image(systemName: "person")
             }
         }
-    }
-}
-
-struct EventsView: View {
-    var body: some View {
-        Text("Events")
     }
 }
 
