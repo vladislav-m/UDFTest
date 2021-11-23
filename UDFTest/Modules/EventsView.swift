@@ -20,7 +20,7 @@ public struct EventsView: View {
     public var body: some View {
         WithViewStore(store) { viewStore in
             List {
-                ForEach(viewStore.events) { event in
+                ForEach(viewStore.filteredEvents) { event in
                     NavigationLink(destination: Text(event.name), tag: event, selection: viewStore.binding(
                         get: \.selectedEvent,
                         send: EventsAction.select
@@ -63,7 +63,20 @@ public enum EventsFilter {
 }
 
 public struct EventsState: Equatable {
-    public var events: [Event] = []
+    public var events: [Event]
+    public var filteredEvents: [Event] {
+        let today = Date()
+        switch self.filter {
+        case .future:
+            return self.events
+                .filter { $0.date >= today }
+                .sorted { $0.date > $1.date }
+        case .past:
+            return self.events
+                .filter { $0.date < today }
+                .sorted { $0.date > $1.date }
+        }
+    }
     public var filter: EventsFilter = .future
     public var selectedEvent: Event?
 }
