@@ -96,10 +96,34 @@ struct EventsView_Previews: PreviewProvider {
             EventsView(store: .init(
                 initialState: .init(events: [
                     Event(
-                        name: "Ивент",
+                        name: "Ивент 1",
                         description: "dsfsdf",
                         speeches: [],
                         date: Date()
+                    ),
+                    Event(
+                        name: "Ивент 2",
+                        description: "dsfsdf",
+                        speeches: [],
+                        date: Date().addingTimeInterval(-60*60*24*3)
+                    ),
+                    Event(
+                        name: "Ивент 3",
+                        description: "dsfsdf",
+                        speeches: [],
+                        date: Date().addingTimeInterval(-60*60*24*2)
+                    ),
+                    Event(
+                        name: "Ивент 4",
+                        description: "dsfsdf",
+                        speeches: [],
+                        date: Date().addingTimeInterval(-60*60*24)
+                    ),
+                    Event(
+                        name: "Ивент 5",
+                        description: "dsfsdf",
+                        speeches: [],
+                        date: Date().addingTimeInterval(60*60*24*2)
                     )
                 ]),
                 reducer: .events,
