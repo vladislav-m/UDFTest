@@ -66,11 +66,12 @@ public struct EventsState: Equatable {
     public var events: [Event]
     public var filteredEvents: [Event] {
         let today = Date()
+
         switch self.filter {
         case .future:
             return self.events
                 .filter { $0.date >= today }
-                .sorted { $0.date > $1.date }
+                .sorted { $0.date < $1.date }
         case .past:
             return self.events
                 .filter { $0.date < today }
@@ -137,6 +138,18 @@ struct EventsView_Previews: PreviewProvider {
                         description: "dsfsdf",
                         speeches: [],
                         date: Date().addingTimeInterval(60*60*24*2)
+                    ),
+                    Event(
+                        name: "Ивент 6",
+                        description: "dsfsdf",
+                        speeches: [],
+                        date: Date().addingTimeInterval(60*60*24*3)
+                    ),
+                    Event(
+                        name: "Ивент 7",
+                        description: "dsfsdf",
+                        speeches: [],
+                        date: Date().addingTimeInterval(60*60*24*4)
                     )
                 ]),
                 reducer: .events,
