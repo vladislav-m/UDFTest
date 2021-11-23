@@ -13,7 +13,51 @@
 		52F1BF19274D04E10004092F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F1BF18274D04E10004092F /* Assets.xcassets */; };
 		52F1BF1C274D04E10004092F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F1BF1B274D04E10004092F /* Preview Assets.xcassets */; };
 		52F1BF1F274D04E10004092F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F1BF1D274D04E10004092F /* LaunchScreen.storyboard */; };
+		52F1BF59274D12530004092F /* SignInUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F1BF50274D12530004092F /* SignInUI.framework */; };
+		52F1BF60274D12530004092F /* SignInUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1BF5F274D12530004092F /* SignInUITests.swift */; };
+		52F1BF62274D12530004092F /* SignInUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 52F1BF52274D12530004092F /* SignInUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52F1BF65274D12530004092F /* SignInUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F1BF50274D12530004092F /* SignInUI.framework */; };
+		52F1BF66274D12530004092F /* SignInUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52F1BF50274D12530004092F /* SignInUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52F1BF70274D12620004092F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1BF2C274D0E710004092F /* SignInView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52F1BF5A274D12530004092F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52F1BF07274D04D80004092F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52F1BF4F274D12530004092F;
+			remoteInfo = SignInUI;
+		};
+		52F1BF5C274D12530004092F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52F1BF07274D04D80004092F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52F1BF0E274D04D80004092F;
+			remoteInfo = UDFTest;
+		};
+		52F1BF63274D12530004092F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52F1BF07274D04D80004092F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52F1BF4F274D12530004092F;
+			remoteInfo = SignInUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		52F1BF6A274D12530004092F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				52F1BF66274D12530004092F /* SignInUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		52F1BF0F274D04D80004092F /* UDFTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDFTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +68,13 @@
 		52F1BF1B274D04E10004092F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		52F1BF1E274D04E10004092F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52F1BF20274D04E10004092F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52F1BF2C274D0E710004092F /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		52F1BF50274D12530004092F /* SignInUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignInUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52F1BF52274D12530004092F /* SignInUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInUI.h; sourceTree = "<group>"; };
+		52F1BF53274D12530004092F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52F1BF58274D12530004092F /* SignInUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignInUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52F1BF5F274D12530004092F /* SignInUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUITests.swift; sourceTree = "<group>"; };
+		52F1BF61274D12530004092F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +82,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F1BF65274D12530004092F /* SignInUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52F1BF4D274D12530004092F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52F1BF55274D12530004092F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52F1BF59274D12530004092F /* SignInUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +108,10 @@
 			isa = PBXGroup;
 			children = (
 				52F1BF11274D04D80004092F /* UDFTest */,
+				52F1BF51274D12530004092F /* SignInUI */,
+				52F1BF5E274D12530004092F /* SignInUITests */,
 				52F1BF10274D04D80004092F /* Products */,
+				52F1BF41274D0F960004092F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				52F1BF0F274D04D80004092F /* UDFTest.app */,
+				52F1BF50274D12530004092F /* SignInUI.framework */,
+				52F1BF58274D12530004092F /* SignInUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,7 +147,44 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		52F1BF41274D0F960004092F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52F1BF51274D12530004092F /* SignInUI */ = {
+			isa = PBXGroup;
+			children = (
+				52F1BF2C274D0E710004092F /* SignInView.swift */,
+				52F1BF52274D12530004092F /* SignInUI.h */,
+				52F1BF53274D12530004092F /* Info.plist */,
+			);
+			path = SignInUI;
+			sourceTree = "<group>";
+		};
+		52F1BF5E274D12530004092F /* SignInUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52F1BF5F274D12530004092F /* SignInUITests.swift */,
+				52F1BF61274D12530004092F /* Info.plist */,
+			);
+			path = SignInUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		52F1BF4B274D12530004092F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52F1BF62274D12530004092F /* SignInUI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		52F1BF0E274D04D80004092F /* UDFTest */ = {
@@ -85,15 +194,54 @@
 				52F1BF0B274D04D80004092F /* Sources */,
 				52F1BF0C274D04D80004092F /* Frameworks */,
 				52F1BF0D274D04D80004092F /* Resources */,
+				52F1BF6A274D12530004092F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				52F1BF64274D12530004092F /* PBXTargetDependency */,
 			);
 			name = UDFTest;
 			productName = UDFTest;
 			productReference = 52F1BF0F274D04D80004092F /* UDFTest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		52F1BF4F274D12530004092F /* SignInUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52F1BF67274D12530004092F /* Build configuration list for PBXNativeTarget "SignInUI" */;
+			buildPhases = (
+				52F1BF4B274D12530004092F /* Headers */,
+				52F1BF4C274D12530004092F /* Sources */,
+				52F1BF4D274D12530004092F /* Frameworks */,
+				52F1BF4E274D12530004092F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SignInUI;
+			productName = SignInUI;
+			productReference = 52F1BF50274D12530004092F /* SignInUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		52F1BF57274D12530004092F /* SignInUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52F1BF6B274D12530004092F /* Build configuration list for PBXNativeTarget "SignInUITests" */;
+			buildPhases = (
+				52F1BF54274D12530004092F /* Sources */,
+				52F1BF55274D12530004092F /* Frameworks */,
+				52F1BF56274D12530004092F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52F1BF5B274D12530004092F /* PBXTargetDependency */,
+				52F1BF5D274D12530004092F /* PBXTargetDependency */,
+			);
+			name = SignInUITests;
+			productName = SignInUITests;
+			productReference = 52F1BF58274D12530004092F /* SignInUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -106,6 +254,13 @@
 				TargetAttributes = {
 					52F1BF0E274D04D80004092F = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					52F1BF4F274D12530004092F = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					52F1BF57274D12530004092F = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 52F1BF0E274D04D80004092F;
 					};
 				};
 			};
@@ -123,6 +278,8 @@
 			projectRoot = "";
 			targets = (
 				52F1BF0E274D04D80004092F /* UDFTest */,
+				52F1BF4F274D12530004092F /* SignInUI */,
+				52F1BF57274D12530004092F /* SignInUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -135,6 +292,20 @@
 				52F1BF1F274D04E10004092F /* LaunchScreen.storyboard in Resources */,
 				52F1BF1C274D04E10004092F /* Preview Assets.xcassets in Resources */,
 				52F1BF19274D04E10004092F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52F1BF4E274D12530004092F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52F1BF56274D12530004092F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +322,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52F1BF4C274D12530004092F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52F1BF70274D12620004092F /* SignInView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52F1BF54274D12530004092F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52F1BF60274D12530004092F /* SignInUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52F1BF5B274D12530004092F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52F1BF4F274D12530004092F /* SignInUI */;
+			targetProxy = 52F1BF5A274D12530004092F /* PBXContainerItemProxy */;
+		};
+		52F1BF5D274D12530004092F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52F1BF0E274D04D80004092F /* UDFTest */;
+			targetProxy = 52F1BF5C274D12530004092F /* PBXContainerItemProxy */;
+		};
+		52F1BF64274D12530004092F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52F1BF4F274D12530004092F /* SignInUI */;
+			targetProxy = 52F1BF63274D12530004092F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		52F1BF1D274D04E10004092F /* LaunchScreen.storyboard */ = {
@@ -284,6 +489,7 @@
 		52F1BF24274D04E10004092F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -305,6 +511,7 @@
 		52F1BF25274D04E10004092F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -320,6 +527,100 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52F1BF68274D12530004092F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 97B8F4A99L;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SignInUI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.berizaryad.SignInUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		52F1BF69274D12530004092F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 97B8F4A99L;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SignInUI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.berizaryad.SignInUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		52F1BF6C274D12530004092F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97B8F4A99L;
+				INFOPLIST_FILE = SignInUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.berizaryad.SignInUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UDFTest.app/UDFTest";
+			};
+			name = Debug;
+		};
+		52F1BF6D274D12530004092F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97B8F4A99L;
+				INFOPLIST_FILE = SignInUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.berizaryad.SignInUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UDFTest.app/UDFTest";
 			};
 			name = Release;
 		};
@@ -340,6 +641,24 @@
 			buildConfigurations = (
 				52F1BF24274D04E10004092F /* Debug */,
 				52F1BF25274D04E10004092F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52F1BF67274D12530004092F /* Build configuration list for PBXNativeTarget "SignInUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52F1BF68274D12530004092F /* Debug */,
+				52F1BF69274D12530004092F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52F1BF6B274D12530004092F /* Build configuration list for PBXNativeTarget "SignInUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52F1BF6C274D12530004092F /* Debug */,
+				52F1BF6D274D12530004092F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

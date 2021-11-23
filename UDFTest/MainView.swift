@@ -6,21 +6,7 @@
 //
 
 import SwiftUI
-
-struct SignInView: View {
-    @State var username: String = ""
-    @State var password: String = ""
-
-    var body: some View {
-        Form {
-            TextField("Username", text: $username)
-            TextField("Password", text: $password)
-            Button("Sign In") {
-                print("Signed in")
-            }
-        }
-    }
-}
+import SignInUI
 
 struct MainView: View {
     @State var isAuthorized: Bool = false
@@ -29,7 +15,7 @@ struct MainView: View {
         if isAuthorized {
             MainTabView()
         } else {
-            SignInView()
+            SignInView(viewModel: .init())
         }
     }
 }
@@ -61,8 +47,10 @@ struct ProfileView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+#if DEBUG
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
     }
 }
+#endif
