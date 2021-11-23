@@ -76,7 +76,7 @@
 		52F1BF11274D04D80004092F /* UDFTest */ = {
 			isa = PBXGroup;
 			children = (
-				52F1BF85274D3B250004092F /* SignIn */,
+				52F1BF85274D3B250004092F /* Modules */,
 				52F1BF12274D04D80004092F /* AppDelegate.swift */,
 				52F1BF14274D04D80004092F /* SceneDelegate.swift */,
 				52F1BF16274D04D80004092F /* MainView.swift */,
@@ -84,7 +84,6 @@
 				52F1BF1D274D04E10004092F /* LaunchScreen.storyboard */,
 				52F1BF20274D04E10004092F /* Info.plist */,
 				52F1BF1A274D04E10004092F /* Preview Content */,
-				52F1BF8A274D3C2C0004092F /* EventsView.swift */,
 			);
 			path = UDFTest;
 			sourceTree = "<group>";
@@ -104,12 +103,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		52F1BF85274D3B250004092F /* SignIn */ = {
+		52F1BF85274D3B250004092F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				52F1BF2C274D0E710004092F /* SignInView.swift */,
+				52F1BF8A274D3C2C0004092F /* EventsView.swift */,
 			);
-			path = SignIn;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
