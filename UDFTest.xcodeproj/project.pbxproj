@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		52F1BF65274D12530004092F /* SignInUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F1BF50274D12530004092F /* SignInUI.framework */; };
 		52F1BF66274D12530004092F /* SignInUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52F1BF50274D12530004092F /* SignInUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52F1BF70274D12620004092F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1BF2C274D0E710004092F /* SignInView.swift */; };
+		52F1BF75274D20740004092F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 52F1BF74274D20740004092F /* ComposableArchitecture */; };
+		52F1BF79274D20870004092F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 52F1BF78274D20870004092F /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F1BF75274D20740004092F /* ComposableArchitecture in Frameworks */,
 				52F1BF65274D12530004092F /* SignInUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F1BF79274D20870004092F /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +206,9 @@
 				52F1BF64274D12530004092F /* PBXTargetDependency */,
 			);
 			name = UDFTest;
+			packageProductDependencies = (
+				52F1BF74274D20740004092F /* ComposableArchitecture */,
+			);
 			productName = UDFTest;
 			productReference = 52F1BF0F274D04D80004092F /* UDFTest.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +227,9 @@
 			dependencies = (
 			);
 			name = SignInUI;
+			packageProductDependencies = (
+				52F1BF78274D20870004092F /* ComposableArchitecture */,
+			);
 			productName = SignInUI;
 			productReference = 52F1BF50274D12530004092F /* SignInUI.framework */;
 			productType = "com.apple.product-type.framework";
@@ -273,6 +283,9 @@
 				Base,
 			);
 			mainGroup = 52F1BF06274D04D80004092F;
+			packageReferences = (
+				52F1BF73274D20740004092F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 52F1BF10274D04D80004092F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -664,6 +677,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		52F1BF73274D20740004092F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.28.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		52F1BF74274D20740004092F /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52F1BF73274D20740004092F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		52F1BF78274D20870004092F /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52F1BF73274D20740004092F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 52F1BF07274D04D80004092F /* Project object */;
 }
