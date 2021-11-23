@@ -26,6 +26,7 @@ public struct EventsView: View {
                         send: EventsAction.select
                     )) {
                         Text(event.name)
+                        Text(event.date.description)
                     }
                 }
             }
