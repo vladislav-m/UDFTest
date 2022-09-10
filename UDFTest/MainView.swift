@@ -10,17 +10,28 @@ import Combine
 import ComposableArchitecture
 
 struct MainView: View {
-    @State var isAuthorized: Bool = true
+    private var store: Store<MainViewState, MainViewAction>
 
     var body: some View {
-        if isAuthorized {
-            MainTabView()
-        } else {
-            SignInView(store: .init(
-                initialState: .init(),
-                reducer: .signIn,
-                environment: .live
-            ))
+        WithViewStore(store) { viewStore in
+
+            if viewStore.isAuthorized {
+                MainTabView()
+            } else {
+                SignInView(store: .init(
+                    initialState: .init(),
+                    reducer: .signIn,
+                    environment: .live
+                ))
+            }
+        }
+    }
+
+    internal init(store: Store<MainViewState, MainViewAction>) {
+        self.store = store
+    }
+}
+
 struct MainViewState: Equatable {
     var isAuthorized: Bool = false
 }
@@ -117,7 +128,10 @@ struct ProfileView: View {
 #if DEBUG
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(store: Store(initialState: MainViewState(),
+                              reducer: .main,
+                              environment: MainEnvironment(isAuthorizedPublisher:
+                                                            Result.Publisher(true).eraseToAnyPublisher())))
     }
 }
 #endif
