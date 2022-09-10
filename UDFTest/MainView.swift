@@ -41,6 +41,15 @@ struct MainEnvironment {
             .eraseToEffect()
     }
 }
+
+extension Reducer where State == MainViewState, Action == MainViewAction, Environment == MainEnvironment {
+    static let main = Reducer { state, action, environment in
+        switch action {
+        case .viewDidLoad:
+            return .none
+        case let .set(isAuthorized):
+            state.isAuthorized = isAuthorized
+            return .none
         }
     }
 }
