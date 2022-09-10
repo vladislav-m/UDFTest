@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Combine
+import ComposableArchitecture
 
 struct MainView: View {
     @State var isAuthorized: Bool = true
@@ -19,6 +21,26 @@ struct MainView: View {
                 reducer: .signIn,
                 environment: .live
             ))
+struct MainViewState: Equatable {
+    var isAuthorized: Bool = false
+}
+
+enum MainViewAction {
+    case viewDidLoad
+    case set(isAuthorized: Bool)
+}
+
+struct MainEnvironment {
+    private var isAuthorizedPublisher: AnyPublisher<Bool, Never>
+    internal init(isAuthorizedPublisher: AnyPublisher<Bool, Never>) {
+        self.isAuthorizedPublisher = isAuthorizedPublisher
+    }
+    func isAuthorized() -> Effect<MainViewAction, Never> {
+        self.isAuthorizedPublisher
+            .map(MainViewAction.set(isAuthorized:))
+            .eraseToEffect()
+    }
+}
         }
     }
 }
