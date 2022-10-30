@@ -136,13 +136,17 @@ public final class AuthService {
     }
 
     public var isAuthorized: AnyPublisher<Bool, Never> {
-        return CurrentValueSubject(true)
+        self.$token
+            .map { $0 != nil }
             .eraseToAnyPublisher()
     }
+
+    @Published private var token: String?
 
     public func signIn(credentials: UserCredentials) -> AnyPublisher<Void, Error> {
         return CurrentValueSubject(())
             .delay(for: 2, scheduler: DispatchQueue.main)
+            .handleEvents(receiveOutput: { [weak self] _ in self?.token = "someToken" })
             .eraseToAnyPublisher()
     }
 }

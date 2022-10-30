@@ -20,12 +20,13 @@ public struct EventsView: View {
     public var body: some View {
         WithViewStore(store) { viewStore in
             List {
-                ForEach(viewStore.events) { event in
+                ForEach(viewStore.filteredEvents) { event in
                     NavigationLink(destination: Text(event.name), tag: event, selection: viewStore.binding(
                         get: \.selectedEvent,
                         send: EventsAction.select
                     )) {
                         Text(event.name)
+                        Text(event.date.description)
                     }
                 }
             }
@@ -62,7 +63,21 @@ public enum EventsFilter {
 }
 
 public struct EventsState: Equatable {
-    public var events: [Event] = []
+    public var events: [Event]
+    public var filteredEvents: [Event] {
+        let today = Date()
+
+        switch self.filter {
+        case .future:
+            return self.events
+                .filter { $0.date >= today }
+                .sorted { $0.date < $1.date }
+        case .past:
+            return self.events
+                .filter { $0.date < today }
+                .sorted { $0.date > $1.date }
+        }
+    }
     public var filter: EventsFilter = .future
     public var selectedEvent: Event?
 }
@@ -95,10 +110,46 @@ struct EventsView_Previews: PreviewProvider {
             EventsView(store: .init(
                 initialState: .init(events: [
                     Event(
-                        name: "Ивент",
+                        name: "Ивент 1",
                         description: "dsfsdf",
                         speeches: [],
                         date: Date()
+                    ),
+                    Event(
+                        name: "Ивент 2",
+                        description: "dsfsdf",
+                        speeches: [],
+                        date: Date().addingTimeInterval(-60*60*24*3)
+                    ),
+                    Event(
+                        name: "Ивент 3",
+                        description: "dsfsdf",
+                        speeches: [],
+                        date: Date().addingTimeInterval(-60*60*24*2)
+                    ),
+                    Event(
+                        name: "Ивент 4",
+                        description: "dsfsdf",
+                        speeches: [],
+                        date: Date().addingTimeInterval(-60*60*24)
+                    ),
+                    Event(
+                        name: "Ивент 5",
+                        description: "dsfsdf",
+                        speeches: [],
+                        date: Date().addingTimeInterval(60*60*24*2)
+                    ),
+                    Event(
+                        name: "Ивент 6",
+                        description: "dsfsdf",
+                        speeches: [],
+                        date: Date().addingTimeInterval(60*60*24*3)
+                    ),
+                    Event(
+                        name: "Ивент 7",
+                        description: "dsfsdf",
+                        speeches: [],
+                        date: Date().addingTimeInterval(60*60*24*4)
                     )
                 ]),
                 reducer: .events,

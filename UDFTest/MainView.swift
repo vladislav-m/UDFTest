@@ -6,19 +6,61 @@
 //
 
 import SwiftUI
+import Combine
+import ComposableArchitecture
 
 struct MainView: View {
-    @State var isAuthorized: Bool = true
+    private var store: Store<MainViewState, MainViewAction>
 
     var body: some View {
-        if isAuthorized {
-            MainTabView()
-        } else {
-            SignInView(store: .init(
-                initialState: .init(),
-                reducer: .signIn,
-                environment: .live
-            ))
+        WithViewStore(store) { viewStore in
+
+            if viewStore.isAuthorized {
+                MainTabView()
+            } else {
+                SignInView(store: .init(
+                    initialState: .init(),
+                    reducer: .signIn,
+                    environment: .live
+                ))
+            }
+        }
+    }
+
+    internal init(store: Store<MainViewState, MainViewAction>) {
+        self.store = store
+    }
+}
+
+struct MainViewState: Equatable {
+    var isAuthorized: Bool = false
+}
+
+enum MainViewAction {
+    case viewDidLoad
+    case set(isAuthorized: Bool)
+}
+
+struct MainEnvironment {
+    private var isAuthorizedPublisher: AnyPublisher<Bool, Never>
+    internal init(isAuthorizedPublisher: AnyPublisher<Bool, Never>) {
+        self.isAuthorizedPublisher = isAuthorizedPublisher
+    }
+    func isAuthorized() -> Effect<MainViewAction, Never> {
+        self.isAuthorizedPublisher
+            .map(MainViewAction.set(isAuthorized:))
+            .eraseToEffect()
+    }
+}
+
+extension Reducer where State == MainViewState, Action == MainViewAction, Environment == MainEnvironment {
+    static let main = Reducer { state, action, environment in
+        switch action {
+        case .viewDidLoad:
+            return .none
+        case let .set(isAuthorized):
+            state.isAuthorized = isAuthorized
+            return .none
         }
     }
 }
@@ -28,7 +70,39 @@ struct MainTabView: View {
         TabView {
             NavigationView {
                 EventsView(store: .init(
-                    initialState: .init(),
+                    initialState: .init(events:
+                                            [
+                                                Event(
+                                                    name: "Ивент 1",
+                                                    description: "dsfsdf",
+                                                    speeches: [],
+                                                    date: Date()
+                                                ),
+                                                Event(
+                                                    name: "Ивент 2",
+                                                    description: "dsfsdf",
+                                                    speeches: [],
+                                                    date: Date().addingTimeInterval(-60*60*24*3)
+                                                ),
+                                                Event(
+                                                    name: "Ивент 3",
+                                                    description: "dsfsdf",
+                                                    speeches: [],
+                                                    date: Date().addingTimeInterval(-60*60*24*2)
+                                                ),
+                                                Event(
+                                                    name: "Ивент 4",
+                                                    description: "dsfsdf",
+                                                    speeches: [],
+                                                    date: Date().addingTimeInterval(-60*60*24)
+                                                ),
+                                                Event(
+                                                    name: "Ивент 5",
+                                                    description: "dsfsdf",
+                                                    speeches: [],
+                                                    date: Date().addingTimeInterval(60*60*24*2)
+                                                )
+                                            ]),
                     reducer: .events,
                     environment: ()
                 ))
@@ -54,7 +128,10 @@ struct ProfileView: View {
 #if DEBUG
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(store: Store(initialState: MainViewState(),
+                              reducer: .main,
+                              environment: MainEnvironment(isAuthorizedPublisher:
+                                                            Result.Publisher(true).eraseToAnyPublisher())))
     }
 }
 #endif
